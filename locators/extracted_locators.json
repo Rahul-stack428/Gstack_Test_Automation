@@ -1,0 +1,105 @@
+[
+    {
+        "tag": "input",
+        "id": null,
+        "name": "email",
+        "class": [
+            "StyledTextInput-sc-1x30a0s-0",
+            "kodZZC",
+            "sc-ktPPKK",
+            "gSTkbN"
+        ],
+        "text": "",
+        "locator": "page.locator(\"[name='email']\")"
+    },
+    {
+        "tag": "input",
+        "id": null,
+        "name": "password",
+        "class": [
+            "StyledTextInput-sc-1x30a0s-0",
+            "kkIIie",
+            "sc-dBmzty",
+            "cOzWoG"
+        ],
+        "text": "",
+        "locator": "page.locator(\"[name='password']\")"
+    },
+    {
+        "tag": "input",
+        "id": null,
+        "name": null,
+        "class": [
+            "StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2",
+            "hmLeNL"
+        ],
+        "text": "",
+        "locator": "Locator Not Found"
+    },
+    {
+        "tag": "button",
+        "id": null,
+        "name": null,
+        "class": [
+            "StyledButtonKind-sc-1vhfpnt-0",
+            "dTlkeS",
+            "sc-sLsrZ",
+            "gUCVfY"
+        ],
+        "text": "",
+        "locator": "Locator Not Found"
+    },
+    {
+        "tag": "button",
+        "id": null,
+        "name": null,
+        "class": [
+            "StyledButtonKind-sc-1vhfpnt-0",
+            "cgANrz"
+        ],
+        "text": "Sign In",
+        "locator": "page.get_by_text(\"Sign In\")"
+    },
+    {
+        "tag": "a",
+        "id": null,
+        "name": null,
+        "class": [
+            "StyledAnchor-sc-1rp7lwl-0",
+            "eFWVti",
+            "sc-keuYuY",
+            "jyryTK"
+        ],
+        "text": "Email Address*",
+        "locator": "page.get_by_text(\"Email Address*\")"
+    },
+    {
+        "tag": "a",
+        "id": null,
+        "name": null,
+        "class": [
+            "StyledAnchor-sc-1rp7lwl-0",
+            "eFWVti",
+            "sc-keuYuY",
+            "jyryTK"
+        ],
+        "text": "Password*",
+        "locator": "page.get_by_text(\"Password*\")"
+    },
+    {
+        "tag": "a",
+        "id": null,
+        "name": null,
+        "class": null,
+        "text": "Terms",
+        "locator": "page.get_by_text(\"Terms\")"
+    },
+    {
+        "tag": "a",
+        "id": null,
+        "name": null,
+        "class": null,
+        "text": "Privacy Policy",
+        "locator": "page.get_by_text(\"Privacy Policy\")"
+    }
+]

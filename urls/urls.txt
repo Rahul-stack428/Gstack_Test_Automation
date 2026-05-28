@@ -1,0 +1,5 @@
+https://admin-test.granitestack.ai/admin/login
+https://admin-test.granitestack.ai/admin/dashboard/503/Demmo
+https://admin-test.granitestack.ai/admin/platforms
+https://admin-test.granitestack.ai/admin/platforms/add
+https://admin-test.granitestack.ai/admin/platforms/5053/business-objects
