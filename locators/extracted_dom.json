@@ -280,286 +280,112 @@
         },
         "workflows": [
             "login"
-        ]
-    },
-    {
-        "url": "https://admin-test.granitestack.ai/admin/login",
-        "page_type": "login_page",
-        "elements": [
+        ],
+        "components": [
             {
-                "tag": "input",
-                "id": null,
-                "name": "email",
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kodZZC",
-                    "sc-ktPPKK",
-                    "gSTkbN"
+                "type": "login_form",
+                "fields": [
+                    "email",
+                    "password"
                 ],
-                "locator": "[name=\"email\"]"
-            },
-            {
-                "tag": "input",
-                "id": null,
-                "name": "password",
-                "type": "password",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kkIIie",
-                    "sc-dBmzty",
-                    "cOzWoG"
-                ],
-                "locator": "[name=\"password\"]"
-            },
-            {
-                "tag": "button",
-                "id": null,
-                "name": null,
-                "type": "submit",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In",
-                "class": [
-                    "StyledButtonKind-sc-1vhfpnt-0",
-                    "cgANrz"
-                ],
-                "locator": "text=\"Sign In\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Email Address*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Email Address*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Password*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Password*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Terms",
-                "class": null,
-                "locator": "text=\"Terms\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Privacy Policy",
-                "class": null,
-                "locator": "text=\"Privacy Policy\""
-            },
-            {
-                "tag": "form",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy",
-                "class": null,
-                "locator": "text=\"Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy\""
+                "actions": [
+                    "sign_in"
+                ]
             }
         ],
-        "page_map": {
-            "forms": [],
-            "buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ],
-            "inputs": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "email",
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kodZZC",
-                        "sc-ktPPKK",
-                        "gSTkbN"
-                    ],
-                    "locator": "[name=\"email\"]"
-                },
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "dropdowns": [],
-            "links": [
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Email Address*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Email Address*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Password*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Password*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Terms",
-                    "class": null,
-                    "locator": "text=\"Terms\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Privacy Policy",
-                    "class": null,
-                    "locator": "text=\"Privacy Policy\""
-                }
-            ],
-            "tables": [],
-            "textareas": [],
-            "auth_fields": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "submit_buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ]
+        "testcases": [
+            {
+                "title": "Valid Login",
+                "category": "positive"
+            },
+            {
+                "title": "Invalid Password",
+                "category": "negative"
+            },
+            {
+                "title": "Invalid Email",
+                "category": "negative"
+            },
+            {
+                "title": "Blank Email",
+                "category": "validation"
+            },
+            {
+                "title": "Blank Password",
+                "category": "validation"
+            }
+        ],
+        "assertions": [
+            {
+                "testcase": "Valid Login",
+                "assertion": "expect(page).to_have_url('**/dashboard')"
+            },
+            {
+                "testcase": "Invalid Password",
+                "assertion": "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
+            }
+        ],
+        "actions": [
+            {
+                "testcase": "Valid Login",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "valid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Password",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "invalid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Password",
+                "actions": []
+            }
+        ],
+        "locator_registry": {
+            "email": "email_input",
+            "password": "password_input",
+            "sign_in": "sign_in_button",
+            "email_address*": "email_address*",
+            "password*": "password*",
+            "terms": "terms",
+            "privacy_policy": "privacy_policy",
+            "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy": "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy"
         }
     },
     {
@@ -843,286 +669,112 @@
         },
         "workflows": [
             "login"
-        ]
-    },
-    {
-        "url": "https://admin-test.granitestack.ai/admin/dashboard/503/Demmo",
-        "page_type": "login_page",
-        "elements": [
+        ],
+        "components": [
             {
-                "tag": "input",
-                "id": null,
-                "name": "email",
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kodZZC",
-                    "sc-ktPPKK",
-                    "gSTkbN"
+                "type": "login_form",
+                "fields": [
+                    "email",
+                    "password"
                 ],
-                "locator": "[name=\"email\"]"
-            },
-            {
-                "tag": "input",
-                "id": null,
-                "name": "password",
-                "type": "password",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kkIIie",
-                    "sc-dBmzty",
-                    "cOzWoG"
-                ],
-                "locator": "[name=\"password\"]"
-            },
-            {
-                "tag": "button",
-                "id": null,
-                "name": null,
-                "type": "submit",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In",
-                "class": [
-                    "StyledButtonKind-sc-1vhfpnt-0",
-                    "cgANrz"
-                ],
-                "locator": "text=\"Sign In\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Email Address*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Email Address*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Password*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Password*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Terms",
-                "class": null,
-                "locator": "text=\"Terms\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Privacy Policy",
-                "class": null,
-                "locator": "text=\"Privacy Policy\""
-            },
-            {
-                "tag": "form",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy",
-                "class": null,
-                "locator": "text=\"Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy\""
+                "actions": [
+                    "sign_in"
+                ]
             }
         ],
-        "page_map": {
-            "forms": [],
-            "buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ],
-            "inputs": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "email",
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kodZZC",
-                        "sc-ktPPKK",
-                        "gSTkbN"
-                    ],
-                    "locator": "[name=\"email\"]"
-                },
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "dropdowns": [],
-            "links": [
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Email Address*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Email Address*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Password*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Password*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Terms",
-                    "class": null,
-                    "locator": "text=\"Terms\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Privacy Policy",
-                    "class": null,
-                    "locator": "text=\"Privacy Policy\""
-                }
-            ],
-            "tables": [],
-            "textareas": [],
-            "auth_fields": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "submit_buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ]
+        "testcases": [
+            {
+                "title": "Valid Login",
+                "category": "positive"
+            },
+            {
+                "title": "Invalid Password",
+                "category": "negative"
+            },
+            {
+                "title": "Invalid Email",
+                "category": "negative"
+            },
+            {
+                "title": "Blank Email",
+                "category": "validation"
+            },
+            {
+                "title": "Blank Password",
+                "category": "validation"
+            }
+        ],
+        "assertions": [
+            {
+                "testcase": "Valid Login",
+                "assertion": "expect(page).to_have_url('**/dashboard')"
+            },
+            {
+                "testcase": "Invalid Password",
+                "assertion": "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
+            }
+        ],
+        "actions": [
+            {
+                "testcase": "Valid Login",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "valid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Password",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "invalid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Password",
+                "actions": []
+            }
+        ],
+        "locator_registry": {
+            "email": "email_input",
+            "password": "password_input",
+            "sign_in": "sign_in_button",
+            "email_address*": "email_address*",
+            "password*": "password*",
+            "terms": "terms",
+            "privacy_policy": "privacy_policy",
+            "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy": "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy"
         }
     },
     {
@@ -1406,286 +1058,112 @@
         },
         "workflows": [
             "login"
-        ]
-    },
-    {
-        "url": "https://admin-test.granitestack.ai/admin/platforms",
-        "page_type": "login_page",
-        "elements": [
+        ],
+        "components": [
             {
-                "tag": "input",
-                "id": null,
-                "name": "email",
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kodZZC",
-                    "sc-ktPPKK",
-                    "gSTkbN"
+                "type": "login_form",
+                "fields": [
+                    "email",
+                    "password"
                 ],
-                "locator": "[name=\"email\"]"
-            },
-            {
-                "tag": "input",
-                "id": null,
-                "name": "password",
-                "type": "password",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kkIIie",
-                    "sc-dBmzty",
-                    "cOzWoG"
-                ],
-                "locator": "[name=\"password\"]"
-            },
-            {
-                "tag": "button",
-                "id": null,
-                "name": null,
-                "type": "submit",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In",
-                "class": [
-                    "StyledButtonKind-sc-1vhfpnt-0",
-                    "cgANrz"
-                ],
-                "locator": "text=\"Sign In\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Email Address*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Email Address*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Password*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Password*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Terms",
-                "class": null,
-                "locator": "text=\"Terms\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Privacy Policy",
-                "class": null,
-                "locator": "text=\"Privacy Policy\""
-            },
-            {
-                "tag": "form",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy",
-                "class": null,
-                "locator": "text=\"Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy\""
+                "actions": [
+                    "sign_in"
+                ]
             }
         ],
-        "page_map": {
-            "forms": [],
-            "buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ],
-            "inputs": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "email",
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kodZZC",
-                        "sc-ktPPKK",
-                        "gSTkbN"
-                    ],
-                    "locator": "[name=\"email\"]"
-                },
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "dropdowns": [],
-            "links": [
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Email Address*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Email Address*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Password*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Password*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Terms",
-                    "class": null,
-                    "locator": "text=\"Terms\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Privacy Policy",
-                    "class": null,
-                    "locator": "text=\"Privacy Policy\""
-                }
-            ],
-            "tables": [],
-            "textareas": [],
-            "auth_fields": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "submit_buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ]
+        "testcases": [
+            {
+                "title": "Valid Login",
+                "category": "positive"
+            },
+            {
+                "title": "Invalid Password",
+                "category": "negative"
+            },
+            {
+                "title": "Invalid Email",
+                "category": "negative"
+            },
+            {
+                "title": "Blank Email",
+                "category": "validation"
+            },
+            {
+                "title": "Blank Password",
+                "category": "validation"
+            }
+        ],
+        "assertions": [
+            {
+                "testcase": "Valid Login",
+                "assertion": "expect(page).to_have_url('**/dashboard')"
+            },
+            {
+                "testcase": "Invalid Password",
+                "assertion": "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
+            }
+        ],
+        "actions": [
+            {
+                "testcase": "Valid Login",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "valid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Password",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "invalid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Password",
+                "actions": []
+            }
+        ],
+        "locator_registry": {
+            "email": "email_input",
+            "password": "password_input",
+            "sign_in": "sign_in_button",
+            "email_address*": "email_address*",
+            "password*": "password*",
+            "terms": "terms",
+            "privacy_policy": "privacy_policy",
+            "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy": "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy"
         }
     },
     {
@@ -1969,286 +1447,112 @@
         },
         "workflows": [
             "login"
-        ]
-    },
-    {
-        "url": "https://admin-test.granitestack.ai/admin/platforms/add",
-        "page_type": "login_page",
-        "elements": [
+        ],
+        "components": [
             {
-                "tag": "input",
-                "id": null,
-                "name": "email",
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kodZZC",
-                    "sc-ktPPKK",
-                    "gSTkbN"
+                "type": "login_form",
+                "fields": [
+                    "email",
+                    "password"
                 ],
-                "locator": "[name=\"email\"]"
-            },
-            {
-                "tag": "input",
-                "id": null,
-                "name": "password",
-                "type": "password",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kkIIie",
-                    "sc-dBmzty",
-                    "cOzWoG"
-                ],
-                "locator": "[name=\"password\"]"
-            },
-            {
-                "tag": "button",
-                "id": null,
-                "name": null,
-                "type": "submit",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In",
-                "class": [
-                    "StyledButtonKind-sc-1vhfpnt-0",
-                    "cgANrz"
-                ],
-                "locator": "text=\"Sign In\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Email Address*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Email Address*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Password*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Password*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Terms",
-                "class": null,
-                "locator": "text=\"Terms\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Privacy Policy",
-                "class": null,
-                "locator": "text=\"Privacy Policy\""
-            },
-            {
-                "tag": "form",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy",
-                "class": null,
-                "locator": "text=\"Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy\""
+                "actions": [
+                    "sign_in"
+                ]
             }
         ],
-        "page_map": {
-            "forms": [],
-            "buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ],
-            "inputs": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "email",
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kodZZC",
-                        "sc-ktPPKK",
-                        "gSTkbN"
-                    ],
-                    "locator": "[name=\"email\"]"
-                },
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "dropdowns": [],
-            "links": [
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Email Address*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Email Address*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Password*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Password*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Terms",
-                    "class": null,
-                    "locator": "text=\"Terms\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Privacy Policy",
-                    "class": null,
-                    "locator": "text=\"Privacy Policy\""
-                }
-            ],
-            "tables": [],
-            "textareas": [],
-            "auth_fields": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "submit_buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ]
+        "testcases": [
+            {
+                "title": "Valid Login",
+                "category": "positive"
+            },
+            {
+                "title": "Invalid Password",
+                "category": "negative"
+            },
+            {
+                "title": "Invalid Email",
+                "category": "negative"
+            },
+            {
+                "title": "Blank Email",
+                "category": "validation"
+            },
+            {
+                "title": "Blank Password",
+                "category": "validation"
+            }
+        ],
+        "assertions": [
+            {
+                "testcase": "Valid Login",
+                "assertion": "expect(page).to_have_url('**/dashboard')"
+            },
+            {
+                "testcase": "Invalid Password",
+                "assertion": "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
+            }
+        ],
+        "actions": [
+            {
+                "testcase": "Valid Login",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "valid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Password",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "invalid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Password",
+                "actions": []
+            }
+        ],
+        "locator_registry": {
+            "email": "email_input",
+            "password": "password_input",
+            "sign_in": "sign_in_button",
+            "email_address*": "email_address*",
+            "password*": "password*",
+            "terms": "terms",
+            "privacy_policy": "privacy_policy",
+            "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy": "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy"
         }
     },
     {
@@ -2532,286 +1836,112 @@
         },
         "workflows": [
             "login"
-        ]
-    },
-    {
-        "url": "https://admin-test.granitestack.ai/admin/platforms/5053/business-objects",
-        "page_type": "login_page",
-        "elements": [
+        ],
+        "components": [
             {
-                "tag": "input",
-                "id": null,
-                "name": "email",
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kodZZC",
-                    "sc-ktPPKK",
-                    "gSTkbN"
+                "type": "login_form",
+                "fields": [
+                    "email",
+                    "password"
                 ],
-                "locator": "[name=\"email\"]"
-            },
-            {
-                "tag": "input",
-                "id": null,
-                "name": "password",
-                "type": "password",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "",
-                "class": [
-                    "StyledTextInput-sc-1x30a0s-0",
-                    "kkIIie",
-                    "sc-dBmzty",
-                    "cOzWoG"
-                ],
-                "locator": "[name=\"password\"]"
-            },
-            {
-                "tag": "button",
-                "id": null,
-                "name": null,
-                "type": "submit",
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In",
-                "class": [
-                    "StyledButtonKind-sc-1vhfpnt-0",
-                    "cgANrz"
-                ],
-                "locator": "text=\"Sign In\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Email Address*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Email Address*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Password*",
-                "class": [
-                    "StyledAnchor-sc-1rp7lwl-0",
-                    "eFWVti",
-                    "sc-keuYuY",
-                    "jyryTK"
-                ],
-                "locator": "text=\"Password*\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Terms",
-                "class": null,
-                "locator": "text=\"Terms\""
-            },
-            {
-                "tag": "a",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Privacy Policy",
-                "class": null,
-                "locator": "text=\"Privacy Policy\""
-            },
-            {
-                "tag": "form",
-                "id": null,
-                "name": null,
-                "type": null,
-                "placeholder": null,
-                "aria_label": null,
-                "role": null,
-                "text": "Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy",
-                "class": null,
-                "locator": "text=\"Sign In!Email Address*Password*Remember MeReset NowSign InBy Signing In , I accept theTerms& Privacy Policy\""
+                "actions": [
+                    "sign_in"
+                ]
             }
         ],
-        "page_map": {
-            "forms": [],
-            "buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ],
-            "inputs": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "email",
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kodZZC",
-                        "sc-ktPPKK",
-                        "gSTkbN"
-                    ],
-                    "locator": "[name=\"email\"]"
-                },
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "dropdowns": [],
-            "links": [
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Email Address*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Email Address*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Password*",
-                    "class": [
-                        "StyledAnchor-sc-1rp7lwl-0",
-                        "eFWVti",
-                        "sc-keuYuY",
-                        "jyryTK"
-                    ],
-                    "locator": "text=\"Password*\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Terms",
-                    "class": null,
-                    "locator": "text=\"Terms\""
-                },
-                {
-                    "tag": "a",
-                    "id": null,
-                    "name": null,
-                    "type": null,
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Privacy Policy",
-                    "class": null,
-                    "locator": "text=\"Privacy Policy\""
-                }
-            ],
-            "tables": [],
-            "textareas": [],
-            "auth_fields": [
-                {
-                    "tag": "input",
-                    "id": null,
-                    "name": "password",
-                    "type": "password",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "",
-                    "class": [
-                        "StyledTextInput-sc-1x30a0s-0",
-                        "kkIIie",
-                        "sc-dBmzty",
-                        "cOzWoG"
-                    ],
-                    "locator": "[name=\"password\"]"
-                }
-            ],
-            "submit_buttons": [
-                {
-                    "tag": "button",
-                    "id": null,
-                    "name": null,
-                    "type": "submit",
-                    "placeholder": null,
-                    "aria_label": null,
-                    "role": null,
-                    "text": "Sign In",
-                    "class": [
-                        "StyledButtonKind-sc-1vhfpnt-0",
-                        "cgANrz"
-                    ],
-                    "locator": "text=\"Sign In\""
-                }
-            ]
+        "testcases": [
+            {
+                "title": "Valid Login",
+                "category": "positive"
+            },
+            {
+                "title": "Invalid Password",
+                "category": "negative"
+            },
+            {
+                "title": "Invalid Email",
+                "category": "negative"
+            },
+            {
+                "title": "Blank Email",
+                "category": "validation"
+            },
+            {
+                "title": "Blank Password",
+                "category": "validation"
+            }
+        ],
+        "assertions": [
+            {
+                "testcase": "Valid Login",
+                "assertion": "expect(page).to_have_url('**/dashboard')"
+            },
+            {
+                "testcase": "Invalid Password",
+                "assertion": "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
+            }
+        ],
+        "actions": [
+            {
+                "testcase": "Valid Login",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "valid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Password",
+                "actions": [
+                    {
+                        "action": "fill",
+                        "field": "email",
+                        "value": "valid_email"
+                    },
+                    {
+                        "action": "fill",
+                        "field": "password",
+                        "value": "invalid_password"
+                    },
+                    {
+                        "action": "click",
+                        "field": "sign_in"
+                    }
+                ]
+            },
+            {
+                "testcase": "Invalid Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Email",
+                "actions": []
+            },
+            {
+                "testcase": "Blank Password",
+                "actions": []
+            }
+        ],
+        "locator_registry": {
+            "email": "email_input",
+            "password": "password_input",
+            "sign_in": "sign_in_button",
+            "email_address*": "email_address*",
+            "password*": "password*",
+            "terms": "terms",
+            "privacy_policy": "privacy_policy",
+            "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy": "sign_in!email_address*password*remember_mereset_nowsign_inby_signing_in_,_i_accept_theterms&_privacy_policy"
         }
     }
 ]

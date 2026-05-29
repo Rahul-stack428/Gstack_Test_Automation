@@ -9,6 +9,12 @@ from utils.page_mapper import PageMapper
 from utils.page_classifier import PageClassifier
 from utils.pom_generator import (POMGenerator)
 from utils.test_generator import (TestGenerator)
+from utils.component_detector import ComponentDetector
+from utils.testcase_generator import (TestCaseGenerator)
+from utils.action_generator import (ActionGenerator)
+from utils.assertion_generator import (AssertionGenerator)
+from utils.locator_registry import (LocatorRegistry)
+from utils.playwright_generator import (PlaywrightGenerator)
 
 
 all_pages = []
@@ -51,14 +57,39 @@ for url in urls:
         )
     )
 
+    locator_registry = (
+        LocatorRegistry.build(
+            cleaned_elements
+        )
+    )
+
     # Map page
     mapped_page = PageMapper.map_page(
         cleaned_elements
     )
 
+    components = ComponentDetector.detect(
+        mapped_page
+    )
+
+    testcases = TestCaseGenerator.generate(
+        components
+    )
+
     workflows = (
         PageMapper.detect_workflows(
             mapped_page
+        )
+    )
+
+    assertions = AssertionGenerator.generate(
+        testcases
+    )
+
+    actions = (
+        ActionGenerator.generate(
+            testcases,
+            components
         )
     )
 
@@ -69,27 +100,23 @@ for url in urls:
         )
     )
 
+
     page_data = {
         "url": url,
         "page_type": page_type,
         "elements": cleaned_elements,
         "page_map": mapped_page,
-        "workflows": workflows
+        "workflows": workflows,
+        "components": components,
+        "testcases": testcases,
+        "assertions": assertions,
+        "actions": actions,
+        "locator_registry": locator_registry
     }
-
-    all_pages.append(page_data)
 
     POMGenerator.generate_page_class(page_data)
-    page_data = {
-        "url": url,
-        "page_type": page_type,
-        "elements": cleaned_elements,
-        "page_map": mapped_page
-    }
-
-    POMGenerator.generate_page_class(
-        page_data
-    )
+    PlaywrightGenerator.generate(page_data)
+    TestGenerator.generate_test(page_data)
 
     all_pages.append(page_data)
 

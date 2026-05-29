@@ -25,3 +25,9 @@ class LoginPage(BasePage):
         self.email.fill(username)
         self.password.fill(password)
         self.sign_in.click()
+        self.page.wait_for_load_state('networkidle')
+
+    def login(self, username, password):
+        self.email.fill(username)
+        self.password.fill(password)
+        self.sign_in.click()
