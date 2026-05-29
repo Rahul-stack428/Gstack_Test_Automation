@@ -1,42 +1,111 @@
+id="mainfixed1"
 import json
 
 from utils.crawler import get_page_content
-from utils.dom_parser import extract_elements
-from utils.locator_generator import generate_locator
-from utils.ai_engine import generate_testcases
-from utils.script_generator import generate_pytest_script
+from utils.dom_parser import DOMParser
+from utils.locator_generator import LocatorGenerator
+from utils.deduplicator import Deduplicator
+from utils.page_mapper import PageMapper
+from utils.page_classifier import PageClassifier
+from utils.pom_generator import (POMGenerator)
+from utils.test_generator import (TestGenerator)
+
+
+all_pages = []
 
 with open("urls/urls.txt") as f:
+
     urls = f.readlines()
 
 for url in urls:
 
     url = url.strip()
 
-    print(f"Processing: {url}")
+    print(f"\nScanning: {url}")
 
     html = get_page_content(url)
 
-    elements = extract_elements(html)
+    elements = DOMParser.extract_elements(
+        html
+    )
 
+    cleaned_elements = []
+
+    # Generate locators
     for el in elements:
-        el["locator"] = generate_locator(el)
 
-    with open("locators/extracted_locators.json", "w") as file:
-        json.dump(elements, file, indent=4)
+        locator = (
+            LocatorGenerator.generate_locator(el)
+        )
 
-    print("Locators extracted")
+        if locator:
 
-    testcases = generate_testcases(elements)
+            el["locator"] = locator
 
-    with open("testcases/generated_testcases.txt", "w") as file:
-        file.write(testcases)
+            cleaned_elements.append(el)
 
-    print("Test cases generated")
+    # Remove duplicates
+    cleaned_elements = (
+        Deduplicator.remove_duplicates(
+            cleaned_elements
+        )
+    )
 
-    script = generate_pytest_script(url, elements)
+    # Map page
+    mapped_page = PageMapper.map_page(
+        cleaned_elements
+    )
 
-    with open("generated_tests/test_generated.py", "w") as file:
-        file.write(script)
+    workflows = (
+        PageMapper.detect_workflows(
+            mapped_page
+        )
+    )
 
-    print("Automation script generated")
+    # Classify page
+    page_type = (
+        PageClassifier.classify(
+            mapped_page
+        )
+    )
+
+    page_data = {
+        "url": url,
+        "page_type": page_type,
+        "elements": cleaned_elements,
+        "page_map": mapped_page,
+        "workflows": workflows
+    }
+
+    all_pages.append(page_data)
+
+    POMGenerator.generate_page_class(page_data)
+    page_data = {
+        "url": url,
+        "page_type": page_type,
+        "elements": cleaned_elements,
+        "page_map": mapped_page
+    }
+
+    POMGenerator.generate_page_class(
+        page_data
+    )
+
+    all_pages.append(page_data)
+
+    TestGenerator.generate_test(
+        page_data
+    )
+
+with open(
+    "locators/extracted_dom.json",
+    "w"
+) as file:
+
+    json.dump(
+        all_pages,
+        file,
+        indent=4
+    )
+
+print("\nDOM Extraction Completed")

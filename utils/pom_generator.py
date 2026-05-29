@@ -1,23 +1,175 @@
+id="pomcode1"
 import json
+import os
 
-with open("locators/extracted_locators.json") as f:
-    data = json.load(f)
 
-with open("pages/generated_page.py", "w") as file:
+class POMGenerator:
 
-    file.write("class GeneratedPage:\n\n")
+    @staticmethod
+    def sanitize_name(name):
 
-    file.write("    def __init__(self, page):\n")
-    file.write("        self.page = page\n\n")
+        if not name:
+            return "unknown"
 
-    for item in data:
+        return (
+            name.lower()
+            .replace(" ", "_")
+            .replace("-", "_")
+            .replace(".", "_")
+        )
 
-        if item.get("id"):
+    @staticmethod
+    def generate_page_class(page_data):
 
-            variable = item["id"].replace("-", "_")
 
-            file.write(
-                f'    {variable} = "{item["locator"]}"\n'
+
+        page_type = (
+            page_data.get("page_type")
+            or "generic_page"
+        )
+
+        class_name = "".join(
+            word.capitalize()
+            for word in page_type.split("_")
+        )
+
+        filename = (
+            f'pages/{page_type}.py'
+        )
+
+        elements = (
+            page_data.get("elements", [])
+        )
+
+        lines = []
+
+        lines.append(
+            "from pages.base_page import BasePage\n"
+        )
+
+        lines.append(
+            f"\nclass {class_name}(BasePage):\n"
+        )
+
+        lines.append(
+            "\n    def __init__(self, page):\n"
+        )
+
+        lines.append(
+            "        super().__init__(page)\n"
+        )
+
+        # Generate locators
+        for el in elements:
+
+            locator = el.get("locator")
+
+            if not locator:
+                continue
+
+            name = (
+                el.get("name")
+                or el.get("placeholder")
+                or el.get("text")
+                or el.get("id")
+                or "element"
             )
 
-print("POM generated successfully")
+            variable = (
+                POMGenerator.sanitize_name(
+                    name
+                )
+            )
+
+            lines.append(
+                f'\n        self.{variable}'
+                f' = page.locator('
+                f'"{locator}")\n'
+            )
+
+        
+        id = "step5code2"
+        workflows = (
+            page_data.get(
+                "workflows",
+                []
+            )
+        )
+
+        # LOGIN METHOD
+        if "login" in workflows:
+            lines.append(
+                "\n    def login("
+                "self, username, password):\n"
+            )
+
+            lines.append(
+                "        self.email.fill("
+                "username)\n"
+            )
+
+            lines.append(
+                "        self.password.fill("
+                "password)\n"
+            )
+
+            lines.append(
+                "        self.sign_in.click()\n"
+            )
+
+            lines.append(
+                "        self.page."
+                "wait_for_load_state("
+                "'networkidle')\n"
+            )
+
+        # SEARCH METHOD
+        if "search" in workflows:
+            lines.append(
+                "\n    def search("
+                "self, text):\n"
+            )
+
+            lines.append(
+                "        self.search.fill("
+                "text)\n"
+            )
+
+            lines.append(
+                "        self.search."
+                "press('Enter')\n"
+            )
+
+
+
+    # Generate login method
+        if page_type == "login_page":
+
+            lines.append(
+                "\n    def login("
+                "self, username, password):\n"
+            )
+
+            lines.append(
+                "        self.email.fill("
+                "username)\n"
+            )
+
+            lines.append(
+                "        self.password.fill("
+                "password)\n"
+            )
+
+            lines.append(
+                "        self.sign_in.click()\n"
+            )
+
+        os.makedirs("pages", exist_ok=True)
+
+        with open(filename, "w") as file:
+
+            file.writelines(lines)
+
+        print(
+            f'Generated POM: {filename}'
+        )

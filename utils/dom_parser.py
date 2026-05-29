@@ -1,23 +1,62 @@
+
 from bs4 import BeautifulSoup
 
-def extract_elements(html):
 
-    soup = BeautifulSoup(html, "html.parser")
+class DOMParser:
 
-    elements = []
+    IMPORTANT_TAGS = [
+        "input",
+        "button",
+        "textarea",
+        "select",
+        "a",
+        "table",
+        "form"
+    ]
 
-    tags = ["input", "button", "a", "select", "textarea"]
+    @staticmethod
+    def clean_dom(html):
 
-    for tag in tags:
+        soup = BeautifulSoup(
+            html,
+            "html.parser"
+        )
 
-        for el in soup.find_all(tag):
+        for tag in soup(
+            ["script", "style", "svg", "noscript"]
+        ):
+            tag.decompose()
 
-            elements.append({
-                "tag": tag,
-                "id": el.get("id"),
-                "name": el.get("name"),
-                "class": el.get("class"),
-                "text": el.text.strip()
-            })
+        return soup
 
-    return elements
+    @staticmethod
+    def extract_elements(html):
+
+        soup = DOMParser.clean_dom(html)
+
+        elements = []
+
+        for tag in DOMParser.IMPORTANT_TAGS:
+
+            for el in soup.find_all(tag):
+
+                element = {
+                    "tag": tag,
+                    "id": el.get("id"),
+                    "name": el.get("name"),
+                    "type": el.get("type"),
+                    "placeholder": el.get(
+                        "placeholder"
+                    ),
+                    "aria_label": el.get(
+                        "aria-label"
+                    ),
+                    "role": el.get("role"),
+                    "text": el.text.strip(),
+                    "class": el.get("class")
+                }
+
+                elements.append(element)
+
+        return elements
+
