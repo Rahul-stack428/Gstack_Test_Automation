@@ -332,16 +332,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "valid_password"
+                        "locator_var": "password_input",
+                        "value_key": "valid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -351,16 +354,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "invalid_password"
+                        "locator_var": "password_input",
+                        "value_key": "invalid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -721,16 +727,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "valid_password"
+                        "locator_var": "password_input",
+                        "value_key": "valid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -740,16 +749,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "invalid_password"
+                        "locator_var": "password_input",
+                        "value_key": "invalid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1110,16 +1122,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "valid_password"
+                        "locator_var": "password_input",
+                        "value_key": "valid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1129,16 +1144,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "invalid_password"
+                        "locator_var": "password_input",
+                        "value_key": "invalid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1499,16 +1517,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "valid_password"
+                        "locator_var": "password_input",
+                        "value_key": "valid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1518,16 +1539,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "invalid_password"
+                        "locator_var": "password_input",
+                        "value_key": "invalid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1888,16 +1912,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "valid_password"
+                        "locator_var": "password_input",
+                        "value_key": "valid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },
@@ -1907,16 +1934,19 @@
                     {
                         "action": "fill",
                         "field": "email",
-                        "value": "valid_email"
+                        "locator_var": "email_input",
+                        "value_key": "valid_email"
                     },
                     {
                         "action": "fill",
                         "field": "password",
-                        "value": "invalid_password"
+                        "locator_var": "password_input",
+                        "value_key": "invalid_password"
                     },
                     {
                         "action": "click",
-                        "field": "sign_in"
+                        "field": "sign_in",
+                        "locator_var": "sign_in_button"
                     }
                 ]
             },

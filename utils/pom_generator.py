@@ -1,9 +1,10 @@
 id="pomcode1"
 import json
 import os
-
+import re
 
 class POMGenerator:
+
 
     @staticmethod
     def sanitize_name(name):
@@ -11,12 +12,21 @@ class POMGenerator:
         if not name:
             return "unknown"
 
-        return (
-            name.lower()
-            .replace(" ", "_")
-            .replace("-", "_")
-            .replace(".", "_")
+        name = name.lower()
+
+        name = re.sub(
+            r'[^a-z0-9_]',
+            '_',
+            name
         )
+
+        name = re.sub(
+            r'_+',
+            '_',
+            name
+        )
+
+        return name.strip('_')
 
     @staticmethod
     def generate_page_class(page_data):
@@ -81,10 +91,17 @@ class POMGenerator:
                 )
             )
 
+            tag = el.get("tag", "")
+
+            if tag == "input":
+                variable += "_input"
+
+            elif tag == "button":
+                variable += "_button"
+
             lines.append(
-                f'\n        self.{variable}'
-                f' = page.locator('
-                f'"{locator}")\n'
+                f"\n        self.{variable}"
+                f" = page.locator('{locator}')\n"
             )
 
         

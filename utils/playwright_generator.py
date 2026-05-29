@@ -40,9 +40,17 @@ class PlaywrightGenerator:
         )
 
         lines.append(
+            "from utils.data_loader import DataLoader\n"
+        )
+
+        lines.append(
             f"from pages.{page_type} "
             f"import {class_name}\n\n"
         )
+
+
+
+
 
         test_count = 1
 
@@ -64,6 +72,10 @@ class PlaywrightGenerator:
                 f"{class_name}(page)\n"
             )
 
+            lines.append(
+                "    data = DataLoader.load('login_data.json')\n"
+            )
+
             # Actions
             for action in (
                 action_group["actions"]
@@ -78,15 +90,13 @@ class PlaywrightGenerator:
                         action["field"]
                     )
 
-                    value = (
-                        action["value"]
-                    )
+                    locator = action["locator_var"]
+                    value_key = action["value_key"]
 
                     lines.append(
-                        f"    page_obj."
-                        f"{field}_input"
-                        f".fill("
-                        f"'{value}')\n"
+                        f"    page_obj.fill("
+                        f"page_obj.{locator}, "
+                        f"data['{value_key}'])\n"
                     )
 
                 elif (
@@ -94,15 +104,12 @@ class PlaywrightGenerator:
                     == "click"
                 ):
 
-                    field = (
-                        action["field"]
-                    )
+                    locator = action["locator_var"]
 
                     lines.append(
-                        f"    page_obj."
-                        f"{field}_button"
-                        f".click()\n"
-                    )
+                        f"    page_obj.click("
+                        f"page_obj.{locator})\n"
+    )
 
             # Assertions
             for assertion in assertions:

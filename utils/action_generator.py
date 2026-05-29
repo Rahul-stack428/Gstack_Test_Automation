@@ -2,7 +2,7 @@
 class ActionGenerator:
 
     @staticmethod
-    def generate(testcases, components):
+    def generate(testcases,components,locator_registry):
 
         actions = []
 
@@ -26,40 +26,63 @@ class ActionGenerator:
                 if title == "Valid Login":
 
                     action_set = [
-                        {
-                            "action": "fill",
-                            "field": "email",
-                            "value": "valid_email"
-                        },
-                        {
-                            "action": "fill",
-                            "field": "password",
-                            "value": "valid_password"
-                        },
-                        {
-                            "action": "click",
-                            "field": "sign_in"
-                        }
-                    ]
+
+                                    {
+                                        "action": "fill",
+                                        "field": "email",
+                                        "locator_var":
+                                            locator_registry.get(
+                                                "email"
+                                            ),
+                                        "value_key":
+                                            "valid_email"
+                                    },
+
+                                    {
+                                        "action": "fill",
+                                        "field": "password",
+                                        "locator_var":
+                                            locator_registry.get(
+                                                "password"
+                                            ),
+                                        "value_key":
+                                            "valid_password"
+                                    },
+
+                                    {
+                                        "action": "click",
+                                        "field": "sign_in",
+                                        "locator_var":
+                                            locator_registry.get(
+                                                "sign_in"
+                                            )
+                                    }
+                                ]
 
                 elif title == "Invalid Password":
 
                     action_set = [
-                        {
-                            "action": "fill",
-                            "field": "email",
-                            "value": "valid_email"
-                        },
-                        {
-                            "action": "fill",
-                            "field": "password",
-                            "value": "invalid_password"
-                        },
-                        {
-                            "action": "click",
-                            "field": "sign_in"
-                        }
-                    ]
+                                  {
+                                    "action": "fill",
+                                    "field": "email",
+                                    "locator_var": locator_registry.get(
+                                                "email"),
+                                    "value_key": "valid_email"
+                                  },
+                                  {
+                                    "action": "fill",
+                                    "field": "password",
+                                    "locator_var": locator_registry.get(
+                                                "password"),
+                                    "value_key": "invalid_password"
+                                  },
+                                  {
+                                    "action": "click",
+                                    "field": "sign_in",
+                                    "locator_var": locator_registry.get(
+                                                "sign_in")
+                                  }
+                                ]
 
             actions.append({
                 "testcase": title,

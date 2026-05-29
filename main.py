@@ -86,11 +86,10 @@ for url in urls:
         testcases
     )
 
-    actions = (
-        ActionGenerator.generate(
-            testcases,
-            components
-        )
+    actions = ActionGenerator.generate(
+        testcases,
+        components,
+        locator_registry
     )
 
     # Classify page
@@ -136,3 +135,4 @@ with open(
     )
 
 print("\nDOM Extraction Completed")
+print(locator_registry)
