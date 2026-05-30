@@ -15,8 +15,16 @@ from utils.action_generator import (ActionGenerator)
 from utils.assertion_generator import (AssertionGenerator)
 from utils.locator_registry import (LocatorRegistry)
 from utils.playwright_generator import (PlaywrightGenerator)
+from utils.role_detector import (RoleDetector)
+from utils.workflow_detector import (WorkflowDetector)
+from utils.workflow_crawler import (
+    WorkflowCrawler
+)
 
-
+WorkflowCrawler.login_and_capture(
+    username="your_email",
+    password="your_password"
+)
 all_pages = []
 
 with open("urls/urls.txt") as f:
@@ -71,6 +79,28 @@ for url in urls:
     components = ComponentDetector.detect(
         mapped_page
     )
+
+    role_component = (
+        RoleDetector.detect(
+            cleaned_elements
+        )
+    )
+
+    if role_component:
+        components.append(
+            role_component
+        )
+    workflows = (
+        WorkflowDetector.detect(
+            components
+        )
+    )
+
+    print(
+        "\nWORKFLOWS:",
+        workflows
+    )
+
 
     testcases = TestCaseGenerator.generate(
         components
@@ -136,3 +166,6 @@ with open(
 
 print("\nDOM Extraction Completed")
 print(locator_registry)
+print("\nCOMPONENTS:")
+print(components)
+print(workflows)
