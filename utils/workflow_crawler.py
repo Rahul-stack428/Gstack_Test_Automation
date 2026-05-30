@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 from utils.role_page_detector import RolePageDetector
-import os
+from utils.role_selector import RoleSelector
+from config import ROLE
 
 
 
@@ -16,8 +17,7 @@ class WorkflowCrawler:
         )
 
         print(
-            f"Password received: {password}"
-        )
+            f"Password received: {password}")
 
 
         with sync_playwright() as p:
@@ -49,16 +49,38 @@ class WorkflowCrawler:
                 )
 
             print("Entering credentials...")
+            page.wait_for_timeout(1000)
 
-            email_field = page.locator(
-                '[name="email"]'
-            )
+            email_field = page.locator("//input[@name='email']")
 
-            email_field.fill(username)
 
             print(
-                "Email after fill:",
+                "Email Visible:",
+                email_field.is_visible()
+            )
+
+            print(
+                "Email Enabled:",
+                email_field.is_enabled()
+            )
+
+            email_field.click()
+
+            email_field.fill(
+                username
+
+            )
+
+            page.wait_for_timeout(1000)
+
+            print(
+                "Email value after type:",
                 email_field.input_value()
+            )
+
+            page.screenshot(
+                path="doms/email_debug.png",
+                full_page=True
             )
 
             password_field = page.locator(
@@ -81,6 +103,7 @@ class WorkflowCrawler:
                   page.locator(
                       '[name="password"]'
                   ).input_value())
+            page.wait_for_timeout(1000)
 
             sign_in_btn = page.locator(
                 'button[type="submit"]'
@@ -118,6 +141,32 @@ class WorkflowCrawler:
                 f"\nCurrent URL: {page.url}"
             )
 
+            with open("urls/urls.txt") as f:
+
+                urls = f.readlines()
+
+            for url in urls:
+                url = url.strip()
+
+                print(f"\nScanning: {url}")
+
+                page = context.new_page()
+
+                page.goto(
+                    url,
+                    wait_until="networkidle"
+                )
+
+                print(
+                    f"Actual URL: {page.url}"
+                )
+
+                print(
+                    f"Actual URL: {page.url}"
+                )
+
+                html = page.content()
+
             page.screenshot(
                 path="doms/post_login.png",
                 full_page=True
@@ -149,15 +198,12 @@ class WorkflowCrawler:
                 try:
 
                     print(
-                        "\nSelecting Platform Admin..."
+                        f"\nSelecting role: {ROLE}"
                     )
 
-                    page.get_by_text(
-                        "Platform Admin"
-                    ).click()
-
-                    page.wait_for_load_state(
-                        "networkidle"
+                    RoleSelector.select_role(
+                        page,
+                        ROLE
                     )
 
                     page.wait_for_timeout(
@@ -193,6 +239,8 @@ class WorkflowCrawler:
                         f"{page.url}"
                     )
 
+
+
                 except Exception as e:
 
                     print(
@@ -214,6 +262,4 @@ class WorkflowCrawler:
 
                     file.write(html)
 
-            browser.close()
-
-            return html
+            return browser,context

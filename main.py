@@ -21,151 +21,175 @@ from utils.workflow_crawler import (
     WorkflowCrawler
 )
 
-WorkflowCrawler.login_and_capture(
-    username="your_email",
-    password="your_password"
+from config import *
+
+browser, context = (
+    WorkflowCrawler.login_and_capture(
+        username=USERNAME,
+        password=PASSWORD
+    )
 )
-all_pages = []
 
-with open("urls/urls.txt") as f:
-
-    urls = f.readlines()
-
-for url in urls:
-
-    url = url.strip()
-
-    print(f"\nScanning: {url}")
-
-    html = get_page_content(url)
-
-    elements = DOMParser.extract_elements(
-        html
-    )
-
-    cleaned_elements = []
-
-    # Generate locators
-    for el in elements:
-
-        locator = (
-            LocatorGenerator.generate_locator(el)
-        )
-
-        if locator:
-
-            el["locator"] = locator
-
-            cleaned_elements.append(el)
-
-    # Remove duplicates
-    cleaned_elements = (
-        Deduplicator.remove_duplicates(
-            cleaned_elements
-        )
-    )
-
-    locator_registry = (
-        LocatorRegistry.build(
-            cleaned_elements
-        )
-    )
-
-    # Map page
-    mapped_page = PageMapper.map_page(
-        cleaned_elements
-    )
-
-    components = ComponentDetector.detect(
-        mapped_page
-    )
-
-    role_component = (
-        RoleDetector.detect(
-            cleaned_elements
-        )
-    )
-
-    if role_component:
-        components.append(
-            role_component
-        )
-    workflows = (
-        WorkflowDetector.detect(
-            components
-        )
-    )
-
-    print(
-        "\nWORKFLOWS:",
-        workflows
-    )
-
-
-    testcases = TestCaseGenerator.generate(
-        components
-    )
-
-    workflows = (
-        PageMapper.detect_workflows(
-            mapped_page
-        )
-    )
-
-    assertions = AssertionGenerator.generate(
-        testcases
-    )
-
-    actions = ActionGenerator.generate(
-        testcases,
-        components,
-        locator_registry
-    )
-
-    # Classify page
-    page_type = (
-        PageClassifier.classify(
-            mapped_page
-        )
-    )
-
-
-    page_data = {
-        "url": url,
-        "page_type": page_type,
-        "elements": cleaned_elements,
-        "page_map": mapped_page,
-        "workflows": workflows,
-        "components": components,
-        "testcases": testcases,
-        "assertions": assertions,
-        "actions": actions,
-        "locator_registry": locator_registry
-    }
-
-    POMGenerator.generate_page_class(page_data)
-    PlaywrightGenerator.generate(page_data)
-    TestGenerator.generate_test(page_data)
-
-    all_pages.append(page_data)
-
-    TestGenerator.generate_test(
-        page_data
-    )
-
-with open(
-    "locators/extracted_dom.json",
-    "w"
-) as file:
-
-    json.dump(
-        all_pages,
-        file,
-        indent=4
-    )
-
-print("\nDOM Extraction Completed")
-print(locator_registry)
-print("\nCOMPONENTS:")
-print(components)
-print(workflows)
+# all_pages = []
+#
+# with open("urls/urls.txt") as f:
+#
+#     urls = f.readlines()
+#
+# for url in urls:
+#
+#     url = url.strip()
+#
+#     print(f"\nScanning: {url}")
+#
+#     page = context.new_page()
+#
+#     page.goto(
+#         url,
+#         wait_until="networkidle"
+#     )
+#     print(
+#         f"Requested URL: {url}"
+#     )
+#
+#     print(
+#         f"Actual URL: {page.url}"
+#     )
+#
+#     print(
+#         f"Actual URL: {page.url}"
+#     )
+#
+#     html = page.content()
+#
+#     elements = DOMParser.extract_elements(
+#         html
+#     )
+#
+#     cleaned_elements = []
+#
+#     # Generate locators
+#     for el in elements:
+#
+#         locator = (
+#             LocatorGenerator.generate_locator(el)
+#         )
+#
+#         if locator:
+#
+#             el["locator"] = locator
+#
+#             cleaned_elements.append(el)
+#
+#     # Remove duplicates
+#     cleaned_elements = (
+#         Deduplicator.remove_duplicates(
+#             cleaned_elements
+#         )
+#     )
+#
+#     locator_registry = (
+#         LocatorRegistry.build(
+#             cleaned_elements
+#         )
+#     )
+#
+#     # Map page
+#     mapped_page = PageMapper.map_page(
+#         cleaned_elements
+#     )
+#
+#     components = ComponentDetector.detect(
+#         mapped_page
+#     )
+#
+#     role_component = (
+#         RoleDetector.detect(
+#             cleaned_elements
+#         )
+#     )
+#
+#     if role_component:
+#         components.append(
+#             role_component
+#         )
+#     workflows = (
+#         WorkflowDetector.detect(
+#             components
+#         )
+#     )
+#
+#     print(
+#         "\nWORKFLOWS:",
+#         workflows
+#     )
+#
+#
+#     testcases = TestCaseGenerator.generate(
+#         components
+#     )
+#
+#     workflows = (
+#         PageMapper.detect_workflows(
+#             mapped_page
+#         )
+#     )
+#
+#     assertions = AssertionGenerator.generate(
+#         testcases
+#     )
+#
+#     actions = ActionGenerator.generate(
+#         testcases,
+#         components,
+#         locator_registry
+#     )
+#
+#     # Classify page
+#     page_type = (
+#         PageClassifier.classify(
+#             mapped_page
+#         )
+#     )
+#     print("\nMAPPED PAGE:")
+#     print(mapped_page)
+#
+#     print("\nCOMPONENTS:")
+#     print(components)
+#
+#
+#     page_data = {
+#         "url": url,
+#         "page_type": page_type,
+#         "elements": cleaned_elements,
+#         "page_map": mapped_page,
+#         "workflows": workflows,
+#         "components": components,
+#         "testcases": testcases,
+#         "assertions": assertions,
+#         "actions": actions,
+#         "locator_registry": locator_registry
+#     }
+#
+#     POMGenerator.generate_page_class(page_data)
+#     PlaywrightGenerator.generate(page_data)
+#     TestGenerator.generate_test(page_data)
+#
+#     all_pages.append(page_data)
+#
+# with open(
+#     "locators/extracted_dom.json",
+#     "w"
+# ) as file:
+#
+#     json.dump(
+#         all_pages,
+#         file,
+#         indent=4
+#     )
+#
+# print("\nDOM Extraction Completed")
+# print(locator_registry)
+# print("\nCOMPONENTS:")
+# print(components)
+# print(workflows)
