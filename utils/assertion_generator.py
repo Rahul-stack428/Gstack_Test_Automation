@@ -26,4 +26,12 @@ class AssertionGenerator:
                     "expect(page.get_by_text('Invalid credentials')).to_be_visible()"
                 })
 
+            elif title == "Select Platform Admin":
+
+                assertions.append({
+                    "testcase": title,
+                    "assertion":
+                        "expect(page).to_have_url('**/dashboard')"
+                })
+
         return assertions

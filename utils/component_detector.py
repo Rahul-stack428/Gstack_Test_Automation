@@ -18,6 +18,10 @@ class ComponentDetector:
             (b.get("text") or "").lower()
             for b in buttons
         ]
+        link_texts = [
+            (l.get("text") or "").lower()
+            for l in page_map.get("links", [])
+        ]
 
         # LOGIN FORM
         if (
@@ -49,5 +53,20 @@ class ComponentDetector:
             components.append({
                 "type": "data_table"
             })
+
+        all_text = button_texts + link_texts
+
+        if any(
+                "platform admin" in text
+                for text in all_text
+        ):
+            components.append({
+                "type": "role_selector",
+                "roles": [
+                    "Platform Admin"
+                ]
+            })
+        print("\nDETECTED COMPONENTS:")
+        print(components)
 
         return components

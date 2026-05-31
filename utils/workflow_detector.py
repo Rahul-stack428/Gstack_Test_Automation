@@ -17,5 +17,9 @@ class WorkflowDetector:
             workflows.append(
                 "role_selection"
             )
+        if "role_selection" in component_types:
+            workflows.append(
+                "role_selection"
+            )
 
         return workflows

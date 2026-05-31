@@ -89,8 +89,19 @@ class PlaywrightGenerator:
                     field = (
                         action["field"]
                     )
+                    locator = action.get(
+                        "locator_var"
+                    )
 
-                    locator = action["locator_var"]
+                    print(
+                        "ACTION:",
+                        action
+                    )
+
+                    print(
+                        "LOCATOR:",
+                        locator
+                    )
                     value_key = action["value_key"]
 
                     lines.append(
@@ -98,6 +109,19 @@ class PlaywrightGenerator:
                         f"page_obj.{locator}, "
                         f"data['{value_key}'])\n"
                     )
+
+                if (
+                        action["field"]
+                        == "platform_admin"
+                ):
+
+                    lines.append(
+                        'page.get_by_text('
+                        '"Platform Admin"'
+                        ').click()\n'
+                    )
+
+                    continue
 
                 elif (
                     action["action"]

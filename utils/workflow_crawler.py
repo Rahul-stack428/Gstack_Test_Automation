@@ -20,33 +20,33 @@ class WorkflowCrawler:
             f"Password received: {password}")
 
 
-        with sync_playwright() as p:
+        p = sync_playwright().start()
 
-            browser = p.chromium.launch(
+        browser = p.chromium.launch(
                 headless=False
             )
 
-            context = browser.new_context()
+        context = browser.new_context()
 
-            page = context.new_page()
+        page = context.new_page()
 
-            print("\nOpening login page...")
+        print("\nOpening login page...")
 
-            page.goto(
+        page.goto(
                 "https://admin-test.granitestack.ai/admin/login",
                 wait_until="networkidle"
             )
 
             # Capture Login Page DOM
-            with open(
+        with open(
                     "doms/login_page.html",
                     "w",
                     encoding="utf-8"
             ) as file:
 
-                file.write(
+            file.write(
                     page.content()
-                )
+            )
 
             print("Entering credentials...")
             page.wait_for_timeout(1000)
@@ -123,9 +123,16 @@ class WorkflowCrawler:
 
             sign_in_btn.click()
 
-            page.wait_for_timeout(
-                5000
-            )
+
+
+            page.wait_for_timeout(3000)
+
+            with open(
+                    "doms/role_popup.html",
+                    "w",
+                    encoding="utf-8"
+            ) as f:
+                f.write(page.content())
 
             print(
                 "Current URL:",
@@ -262,4 +269,5 @@ class WorkflowCrawler:
 
                     file.write(html)
 
-            return browser,context
+            print("Workflow capture completed")
+            return browser, context, p

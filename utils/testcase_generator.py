@@ -63,5 +63,13 @@ class TestCaseGenerator:
                         "category": "functional"
                     }
                 ])
+            elif component_type == "role_selection":
+
+                testcases.extend([
+                    {
+                        "title": "Select Platform Admin",
+                        "category": "positive"
+                    }
+                ])
 
         return testcases

@@ -83,6 +83,14 @@ class ActionGenerator:
                                                 "sign_in")
                                   }
                                 ]
+                elif title == "Select Platform Admin":
+
+                    action_set = [
+                    {
+                        "action": "click",
+                        "field": "platform_admin"
+                    }
+                ]
 
             actions.append({
                 "testcase": title,

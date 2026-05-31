@@ -30,3 +30,9 @@ def test_blank_email(page):
 def test_blank_password(page):
     page_obj = LoginPage(page)
     data = DataLoader.load('login_data.json')
+
+def test_select_platform_admin(page):
+    page_obj = LoginPage(page)
+    data = DataLoader.load('login_data.json')
+page.get_by_text("Platform Admin").click()
+    expect(page).to_have_url('**/dashboard')
